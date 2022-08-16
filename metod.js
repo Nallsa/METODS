@@ -4,12 +4,13 @@ const phone = {
   phoneMemory: 128,
   color: 'black',
   power: true,
-  call: function call() {
-    return console.log('Я звоню....')
+  call(name = 'unknown') {
+    console.log('Я звоню...')
+    return console.log(`Я звоню ${name}`)
   },
   batteryPower: 100,
   getBatteryPower() {
-    return console.log(`Ваша зарядка ${batteryPower} %`)
+    return console.log(`Ваша зарядка ${phone.batteryPower} %`)
   },
   isOn() {
     if (phone.power === true) {
@@ -32,12 +33,12 @@ const phone = {
     { to: '+7377 656 21 21', time: '23:25', message: 'Д1авала?' },
   ],
   inbox: [{ from: '+7999 213 12 12', time: '20:12', message: 'Спишь?' }],
-  sentMessage() {
+  sentMessage(from, time, message) {
     const mass = phone.inbox
     return mass.push({
-      from: '+2124 312 48 24',
-      time: '11:25',
-      message: 'Все еще спишь?',
+      from: from,
+      time: time,
+      message: message,
     })
   },
   clearInbox() {
@@ -52,6 +53,11 @@ const phone = {
   },
 }
 
-phone.call = function call(name) {
-  return console.log(`Я звоню ${name}`)
-}
+console.log(phone.inbox)
+
+phone.call()
+
+// phone.call = function call(name) {
+//   return console.log(`Я звоню ${name}`)
+// }
+// phone.call('dsds')

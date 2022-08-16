@@ -41,7 +41,7 @@ const adress = {
   house: 113,
 }
 
-const Bek = (par) => {
+const bek = (par) => {
   if (par === man.Pass) {
     console.log(`Добро пожаловать, ${man.name}.Ваш логин ${man.Log}`)
   } else {
@@ -54,8 +54,8 @@ const lottery = Math.floor(Math.random() * 20000)
 function lott() {
   if (man.lotteryNumber === lottery) {
     man.money = man.money + 1000000
-    console.log('поздравляем вы выиграли!')
+    alert('поздравляем вы выиграли!')
   } else {
-    console.log('Вы проиграли, попробуйте еще раз')
+    alert('Вы проиграли, попробуйте еще раз')
   }
 }
